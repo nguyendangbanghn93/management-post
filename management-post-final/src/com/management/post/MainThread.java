@@ -1,7 +1,4 @@
-package com.management.posts;
-
-
-import java.util.ArrayList;
+package com.management.post;
 
 public class MainThread {
     //Thực hiện
@@ -40,13 +37,13 @@ public class MainThread {
         System.out.println(String.format("//    3. THE END.                                   //"));
         System.out.println(String.format("//                                                  //"));
         System.out.println(String.format("//////////////////////////////////////////////////////"));
-        System.out.print(String.format("Nhập mục thực hiện: "));
+        System.out.print(String.format("Choose: "));
         int choose = scanner.nextInt();
         scanner.nextLine();
         return choose;
     }
 
-    private static ArrayList<InformationPosts> morePosts() {
+    private static java.util.ArrayList<InformationPosts> morePosts() {
         String choose;
         int i = 1;
         do {
@@ -84,13 +81,13 @@ public class MainThread {
         System.out.println(String.format("\nLIST OF YOUR POSTS:"));
         System.out.println("\n-------------------------------------------------------------------------------------------------------------------------");
         for (int j = 0; j < postList.size(); j++) {
-            InformationPosts baiViet = (InformationPosts) postList.get(j);
-            System.out.println(String.format("\nPOSTS %s: %s", j + 1, baiViet.getTitle()));
-            System.out.println(String.format("Code: %s  ||  Ngày viết: %s", baiViet.getCode(), baiViet.getDayWrites()));
-            System.out.println(String.format("Avata: %s", baiViet.getAvata()));
-            System.out.println(String.format("Description: %s", baiViet.getDescription()));
-            System.out.println(String.format("Content:\n%s", baiViet.getContent()));
-            System.out.println(String.format("Author: %s", baiViet.getAuthor()));
+            InformationPosts post = (InformationPosts) postList.get(j);
+            System.out.println(String.format("\nPOSTS %s: %s", j + 1, post.getTitle()));
+            System.out.println(String.format("Code: %s  ||  Day writes: %s", post.getCode(), post.getDayWrites()));
+            System.out.println(String.format("Avata: %s", post.getAvata()));
+            System.out.println(String.format("Description: %s", post.getDescription()));
+            System.out.println(String.format("Content:\n%s", post.getContent()));
+            System.out.println(String.format("Author: %s", post.getAuthor()));
         }
         System.out.println("-------------------------------------------------------------------------------------------------------------------------");
     }
@@ -103,5 +100,4 @@ public class MainThread {
     private static void reEnterRequired() {
         System.out.print(String.format("\nOperation incorrect, requires re-enter!!!"));
     }
-
 }

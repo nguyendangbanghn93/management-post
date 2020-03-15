@@ -1,4 +1,4 @@
-package com.management.posts;
+package com.management.post;
 
 public class InformationPosts {
     private String code;
